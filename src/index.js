@@ -2,6 +2,9 @@ import express from 'express'
 import dotenv from 'dotenv'
 import { DBConnection } from './config/db-connection.js'
 import { authRouter } from './routes/auth-routes.js'
+import { userRouter } from './routes/user-routes.js'
+import { adminRouter } from './routes/admin-routes.js'
+import { categoryRouter } from './routes/category-controller.js'
 
 dotenv.config()
 
@@ -17,6 +20,9 @@ DBConnection()
 
 // routes
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/users", userRouter)
+app.use("/api/v1/admin", adminRouter)
+app.use('/api/v1/categories', categoryRouter)
 
 
 const PORT = process.env.PORT || 3000
