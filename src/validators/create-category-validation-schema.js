@@ -1,4 +1,4 @@
-export const createCategorySchema = {
+export const createCategoryValidationSchema = {
     name: {
         notEmpty: {
             errorMessage: "Category name cannot be empty"
